@@ -50,7 +50,7 @@ class Menu extends Model
 
     public function scopePath($query, $path)
     {
-        return $query->where('url', '/' . $path);
+        return $query->where('url', $path);
     }
 
     public function getBladeUrlAttribute()
@@ -61,6 +61,7 @@ class Menu extends Model
         if ($this->type == '2') {
             return action('Home\PathController@contentList', ['id' => $this->id]);
         }
+
         return action('Home\PathController@index', ['path' => $this->url]);
     }
 

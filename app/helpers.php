@@ -125,10 +125,10 @@ function limit($data, $length)
 
 function checkUrl($url)
 {
-    $preg = "/^http(s)?:\\/\\/.+/";
+    $preg = '/^http(s)?:\\/\\/.+/';
     if (preg_match($preg, $url)) {
         return true;
     }
+
     return false;
 }
-

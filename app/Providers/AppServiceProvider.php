@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Schema;
 
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -32,8 +31,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-
         //解决数据迁移时候，表结构不存在时候，跑出的错误。
         if (Schema::hasTable('menus')) {
             View::share('globalMenu', Menu::allTree()->where('hide', false)->get());

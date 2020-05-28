@@ -7,15 +7,20 @@ use App\Models\Content;
 use App\Models\Menu;
 use App\Models\Message;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 
 class PathController extends Controller
 {
     public function index(Request $request)
     {
         $path = $request->path();
-        $menu = Menu::path($path)->get()->first();
+        if ($path == '/') {
+            $menu = Menu::path($path)->get()->first();
+        } else {
+            $menu = Menu::path('/'.$path)->get()->first();
+        }
+
         if ($menu) {
             $view = $menu->view['pageView'];
 
@@ -52,10 +57,10 @@ class PathController extends Controller
         if ($content->redirect) {
             if (checkUrl($content->redirect)) {
                 return redirect()->away($content->redirect);
-            } else {
-                $url = url($content->redirect);
-                return redirect()->away($url);
             }
+            $url = url($content->redirect);
+
+            return redirect()->away($url);
         }
         if ($content) {
             return view(\sprintf('home.%s', Str::of($content->menu->view['pageView'])->basename('.blade.php')), ['content' => $content]);

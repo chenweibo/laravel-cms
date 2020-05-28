@@ -43,7 +43,7 @@ class BannersController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Banner $banner
+     * @param \App\Banner              $banner
      *
      * @return \Illuminate\Http\Response
      */
