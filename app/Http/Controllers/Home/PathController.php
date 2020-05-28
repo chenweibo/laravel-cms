@@ -18,7 +18,7 @@ class PathController extends Controller
         if ($path == '/') {
             $menu = Menu::path($path)->get()->first();
         } else {
-            $menu = Menu::path('/'.$path)->get()->first();
+            $menu = Menu::path('/' . $path)->get()->first();
         }
 
         if ($menu) {
@@ -63,7 +63,7 @@ class PathController extends Controller
             return redirect()->away($url);
         }
         if ($content) {
-            return view(\sprintf('home.%s', Str::of($content->menu->view['pageView'])->basename('.blade.php')), ['content' => $content]);
+            return view(\sprintf('home.%s', Str::of($content->menu->view['pageView'])->basename('.blade.php')), ['content' => $content, 'menu' => $content->menu]);
         }
         abort(404);
     }

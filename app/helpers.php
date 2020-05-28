@@ -62,7 +62,7 @@ function getMenuById($id)
  */
 function getPage($id)
 {
-    return DB::table('menus')->where('id', $id)->first();
+    return Menu::where('id', $id)->first();
 }
 
 /**
@@ -72,7 +72,7 @@ function getPage($id)
  */
 function getContent($id)
 {
-    return DB::table('contents')->where('id', $id)->first();
+    return Menu::where('id', $id)->first();
 }
 
 /**
