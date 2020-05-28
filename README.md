@@ -71,6 +71,7 @@ $ php artisan key:generate
 ```shell
 $ php artisan rest:db
 ```
+初始的用户角色权限已使用数据迁移生成。
 
 #### 创建软连接
 
@@ -79,7 +80,6 @@ $ php artisan storage:link
 ```
 
 
-初始的用户角色权限已使用数据迁移生成。
 >如果创建失败,移动到 public 运行 rm storage
 
 #### 启动项目
