@@ -109,11 +109,11 @@ $ php artisan serve
 | **扩展包** | **一句话描述** | **本项目应用场景** |
 | ---- | ---- | ---- | 
 | [overtrue/laravel-lang](https://github.com/overtrue/laravel-lang) | Laravel 多语言 | 报错信息本地化 |
-| [overtrue/laravel-uploader](https://github.com/overtrue/laravel-uploader) | Laravel 上传功能封装 | 帖子内容图片上传 |
+| [overtrue/laravel-uploader](https://github.com/overtrue/laravel-uploader) | Laravel 上传功能封装 | 文件上传 |
 | [Intervention/image](https://github.com/Intervention/image) | 图片处理功能库 | 用于图片裁切 |
 | [guzzlehttp/guzzle](https://github.com/guzzle/guzzle) | HTTP 请求套件 |    |
-| [overtrue/laravel-wechat](https://github.com/overtrue/laravel-wechat) | 非官方微信集成包 |    |
-| [laravel/sanctum](https://github.com/laravel/sanctum) | lavarel官方jwt登录包 用于后台授权 |    |
+| [overtrue/laravel-wechat](https://github.com/overtrue/laravel-wechat) | 非官方微信集成包 | 用于俄日新开发    |
+| [laravel/sanctum](https://github.com/laravel/sanctum) | lavarel官方jwt登录包  | 用于后台授权   |
 | [laravolt/avatar](https://github.com/laravolt/avatar) | 生成用户头像 | 用户头像 |
 | [tucker-eric/eloquentfilter](https://github.com/tucker-eric/eloquentfilter) | 模型字段过滤 | 接口字段过滤 |
 
