@@ -7,6 +7,7 @@ use App\Http\Requests\MenusRequest;
 use App\Http\Resources\MenuResource;
 use App\Models\Component;
 use App\Models\Menu;
+use Illuminate\Support\Facades\Cache;
 
 class MenusController extends Controller
 {
@@ -40,7 +41,10 @@ class MenusController extends Controller
      */
     public function store(MenusRequest $request)
     {
-        return new MenuResource(Menu::create($request->all()));
+        $result = Menu::create($request->all());
+        Cache::pull('menu');
+
+        return new MenuResource($result);
     }
 
     public function show(Menu $menu)
@@ -64,6 +68,7 @@ class MenusController extends Controller
         $this->authorize('update', $menu);
 
         $menu->update($request->all());
+        Cache::pull('menu');
 
         return response()->json([
             'message' => 'ok',
@@ -79,6 +84,7 @@ class MenusController extends Controller
     {
         $menu->delete();
         $menu->where('parentId', $menu->id)->with('findChildren')->delete();
+        Cache::pull('menu');
 
         return $this->withNoContent();
     }
