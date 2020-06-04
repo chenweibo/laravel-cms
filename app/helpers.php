@@ -3,7 +3,6 @@
 // 辅助函数
 use App\Models\Content;
 use App\Models\Menu;
-use Illuminate\Support\Facades\DB;
 
 function handleSiteStructure($array)
 {
