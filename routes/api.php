@@ -20,6 +20,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('admin/me', 'Api\AuthController@me');
 
     Route::get('/admin/clearCache', 'Api\ToolsController@clearCache');
+    Route::get('/admin/Cache', 'Api\ToolsController@Cache');
 
     Route::Post('admin/upload/common', 'Api\UploadsController@commonUpload');
     Route::Post('admin/upload/file', 'Api\UploadsController@fileUpload');

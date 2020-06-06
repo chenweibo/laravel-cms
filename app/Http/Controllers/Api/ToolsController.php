@@ -9,6 +9,11 @@ class ToolsController extends Controller
 {
     public function clearCache()
     {
+        modifyEnv([
+            'APP_ENV' => 'local',
+            'APP_DEBUG' => 'true',
+        ]);
+
         Artisan::call('cache:clear');
         Artisan::call('config:clear');
         Artisan::call('route:clear');
@@ -17,8 +22,12 @@ class ToolsController extends Controller
         return ['messages' => 'ok'];
     }
 
-    public function cache()
+    public function Cache()
     {
+        modifyEnv([
+            'APP_ENV' => 'production',
+            'APP_DEBUG' => 'false',
+        ]);
         Artisan::call('config:cache');
         Artisan::call('route:cache');
 

@@ -16,6 +16,27 @@ function handleSiteStructure($array)
     }
 }
 
+function modifyEnv(array $data)
+{
+    $envPath = base_path() . DIRECTORY_SEPARATOR . '.env';
+
+    $contentArray = collect(file($envPath, FILE_IGNORE_NEW_LINES));
+
+    $contentArray->transform(function ($item) use ($data) {
+        foreach ($data as $key => $value) {
+            if (str_contains($item, $key)) {
+                return $key . '=' . $value;
+            }
+        }
+
+        return $item;
+    });
+
+    $content = implode($contentArray->toArray(), "\n");
+
+    \File::put($envPath, $content);
+}
+
 function handleComponentDetail($array)
 {
     $result = [];
@@ -65,13 +86,13 @@ function getPage($id)
 }
 
 /**
- * 获取指定id的内容.
+ * 根据列表栏目id获取所属的内容.
  *
  * @return model
  */
-function getContent($id)
+function getContentByMenuId($id)
 {
-    return Menu::where('id', $id)->first();
+    return Menu::where('id', $id)->first()->content;
 }
 
 /**
@@ -130,4 +151,16 @@ function checkUrl($url)
     }
 
     return false;
+}
+
+/**
+ * 处理时间格式.
+ *
+ * @param string $time 时间或者时间戳
+ * @param string $format 时间格式
+ * @return string
+ */
+function parseTime(string $time, $format = "Y-m-d")
+{
+    return date($format, $time);
 }
