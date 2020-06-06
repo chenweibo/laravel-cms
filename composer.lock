@@ -171,12 +171,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chenweibo/php-toolbox.git",
-                "reference": "d0203477ab2d8d4cc5015bea5625019e43b1cfe7"
+                "reference": "23c1bae1a25a9d7ac4542600cec34cf22455f7ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chenweibo/php-toolbox/zipball/d0203477ab2d8d4cc5015bea5625019e43b1cfe7",
-                "reference": "d0203477ab2d8d4cc5015bea5625019e43b1cfe7",
+                "url": "https://api.github.com/repos/chenweibo/php-toolbox/zipball/23c1bae1a25a9d7ac4542600cec34cf22455f7ab",
+                "reference": "23c1bae1a25a9d7ac4542600cec34cf22455f7ab",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -212,7 +212,7 @@
                 }
             ],
             "description": "php common tools package",
-            "time": "2020-06-05T06:47:29+00:00"
+            "time": "2020-06-06T06:06:06+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

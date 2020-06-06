@@ -8,6 +8,7 @@
     <title>index</title>
 </head>
 <body>
-this is index
+
+{{dd(getAllContentByMenuId(3))}}
 </body>
 </html>

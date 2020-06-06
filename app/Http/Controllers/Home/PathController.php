@@ -7,7 +7,6 @@ use App\Models\Content;
 use App\Models\Menu;
 use App\Models\Message;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 
 class PathController extends Controller

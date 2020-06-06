@@ -92,7 +92,9 @@ function getPage($id)
  */
 function getContentByMenuId($id)
 {
-    return Menu::where('id', $id)->first()->content;
+    $array = Menu::where('id', $id)->first();
+
+    return $array->content ?? [];
 }
 
 /**
@@ -143,6 +145,13 @@ function limit($data, $length)
     return \mb_substr($string, 0, $length, 'utf-8');
 }
 
+/**
+ * 正则验证是否存在http或者https.
+ *
+ * @param $url
+ *
+ * @return string
+ */
 function checkUrl($url)
 {
     $preg = '/^http(s)?:\\/\\/.+/';
@@ -154,14 +163,39 @@ function checkUrl($url)
 }
 
 /**
- * 处理时间格式.
+ * 根据栏目id获取全部产品
+ * *
+ * @param $id
+ * @param int $count 数量 不填写或者为0时候取全部
  *
- * @param string $time   时间或者时间戳
- * @param string $format 时间格式
- *
- * @return string
+ * @return model
  */
-function parseTime(string $time, $format = 'Y-m-d')
+function getAllContentByMenuId($id, $count = 0)
 {
-    return date($format, $time);
+    $menu = Menu::oneTree()->find($id);
+    $arr = $menu->children->pluck('id') ?? [];
+    if ($count == 0) {
+        return Content::whereIn('menus_id', $arr)->get();
+    }
+
+    return Content::whereIn('menus_id', $arr)->limit($count)->get();
+}
+
+/**
+ * 根据栏目id获取推荐产品
+ * *
+ * @param $id
+ * @param int $count 数量 不填写或者为0时候取全部
+ *
+ * @return Collection
+ */
+function getRecommendContentByMenuId($id, $count = 0)
+{
+    $menu = Menu::oneTree()->find($id);
+    $arr = $menu->children->pluck('id') ?? [];
+    if ($count == 0) {
+        return Content::whereIn('menus_id', $arr)->where('recommend', true)->get();
+    }
+
+    return Content::whereIn('menus_id', $arr)->where('recommend', true)->limit($count)->get();
 }

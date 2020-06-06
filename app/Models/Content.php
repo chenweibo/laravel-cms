@@ -112,6 +112,14 @@ class Content extends Model
      */
     protected function getBladeUrlAttribute()
     {
+        if ($this->menu) {
+            if ($this->menu->parentId == 0) {
+                return action('Home\PathController@contentView', ['id' => $this->id]);
+            }
+
+            return action('Home\PathController@contentList', ['id' => $this->id]);
+        }
+
         return action('Home\PathController@contentView', ['id' => $this->id]);
     }
 

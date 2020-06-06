@@ -19,24 +19,27 @@ class FilesController extends Controller
     public function getTemplateFileList()
     {
         $system = $this->fileSystem()->files('resources');
-        $res = [];
 
-        return ['list' => $res, 'path' => ''];
+        return ['list' => $system];
     }
 
     public function getHomeCssFileList()
     {
-        return ['list' => scandir(public_path()), 'path' => public_path()];
+        $system = $this->fileSystem()->files('public/static');
+
+        return ['list' => $system];
     }
 
     public function getStorageFileList()
     {
-        return ['list' => scandir(storage_path('app/public')), 'path' => storage_path('app/public')];
+        $system = $this->fileSystem()->files('storage/app/public');
+
+        return ['list' => $system];
     }
 
     public function getFileListByPath(Request $request)
     {
-        return ['list' => scandir($request->path), 'path' => $request->path];
+        return ['list' => $this->fileSystem()->files($request->path), 'path' => $request->path];
     }
 
     public function mkDir(Request $request)
