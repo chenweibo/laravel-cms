@@ -5,12 +5,24 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use File;
 use Illuminate\Http\Request;
+use Toolbox\Module\File\FileResolver;
+
 
 class FilesController extends Controller
 {
+
+    public function fileSystem()
+    {
+        $config = ['root_path' => base_path()];
+        return FileResolver::config($config);
+    }
+
     public function getTemplateFileList()
     {
-        return ['list' => scandir(base_path('resources/views/home')), 'path' => base_path('resources/views/home')];
+        $system = $this->fileSystem()->files('resources');
+        $res = [];
+
+        return ['list' => $res, 'path' => ''];
     }
 
     public function getHomeCssFileList()
