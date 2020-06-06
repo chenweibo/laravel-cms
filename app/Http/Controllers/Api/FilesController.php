@@ -7,13 +7,12 @@ use File;
 use Illuminate\Http\Request;
 use Toolbox\Module\File\FileResolver;
 
-
 class FilesController extends Controller
 {
-
     public function fileSystem()
     {
         $config = ['root_path' => base_path()];
+
         return FileResolver::config($config);
     }
 

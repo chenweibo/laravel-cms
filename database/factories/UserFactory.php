@@ -16,12 +16,14 @@ use Illuminate\Support\Str;
 | model instances for testing / seeding your application's database.
 |
 */
+
 use Illuminate\Support\Facades\Hash;
+
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         // 'email' => $faker->unique()->safeEmail,
-        'email' => '563960993@qq.com',
+        'email' => 'dycm@dycm.com',
         'email_verified_at' => now(),
         'password' => Hash::make('dycm123456'), // dycm123456
         'remember_token' => Str::random(10),

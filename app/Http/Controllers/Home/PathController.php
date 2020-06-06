@@ -18,9 +18,8 @@ class PathController extends Controller
         if ($path == '/') {
             $menu = Menu::path($path)->get()->first();
         } else {
-            $menu = Menu::path('/' . $path)->get()->first();
+            $menu = Menu::path('/'.$path)->get()->first();
         }
-
         if ($menu) {
             $view = $menu->view['pageView'];
 

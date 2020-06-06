@@ -104,6 +104,18 @@ class Content extends Model
     }
 
     /**
+     * 获得url.
+     *
+     * @param $id
+     *
+     * @return array
+     */
+    protected function getBladeUrlAttribute()
+    {
+        return action('Home\PathController@contentView', ['id' => $this->id]);
+    }
+
+    /**
      * 取得下一篇的id值及其名称.
      *
      * @param $id
