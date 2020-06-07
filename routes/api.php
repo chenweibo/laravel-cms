@@ -55,10 +55,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     // Resources
     Route::resources([
-        'menus' => 'Api\MenusController',
-        'contents' => 'Api\ContentsController',
-        'banners' => 'Api\BannersController',
-        'messages' => 'Api\MessageController',
+        'menus'      => 'Api\MenusController',
+        'contents'   => 'Api\ContentsController',
+        'banners'    => 'Api\BannersController',
+        'messages'   => 'Api\MessageController',
         'components' => 'Api\ComponentsController',
     ]);
 });

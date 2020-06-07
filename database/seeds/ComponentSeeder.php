@@ -13,7 +13,8 @@ class ComponentSeeder extends Seeder
     public function run()
     {
         $now = Carbon::now();
-        DB::table('components')->insert([
+        DB::table('components')->insert(
+            [
                 ['title' => '关键词', 'notes' => '', 'belong' => '0', 'sort' => 99, 'detail' => '{"title":"SEO关键词","label":"keywords","type":"input","value":"","size":{},"range":"global"}', 'created_at' => $now, 'updated_at' => $now],
                 ['title' => '描述', 'notes' => '', 'belong' => '0', 'sort' => 99, 'detail' => '{"title":"SEO描述","label":"description","type":"input","value":"","size":{},"range":"global"}', 'created_at' => $now, 'updated_at' => $now],
                 ['title' => '缩略图', 'notes' => '', 'belong' => '1', 'sort' => 99, 'detail' => '{"title":"缩略图","label":"thumbnail","type":"OneImgupload","value":"","size":{},"range":"global"}', 'created_at' => $now, 'updated_at' => $now],

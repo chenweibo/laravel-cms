@@ -69,22 +69,22 @@ return [
          * You can create custom strategy to override the default strategy.
          */
         'file' => [
-            'name' => 'file',
-            'mimes' => ['image/jpeg', 'image/png', 'image/bmp', 'image/gif','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','application/pdf','application/zip'],
+            'name'      => 'file',
+            'mimes'     => ['image/jpeg', 'image/png', 'image/bmp', 'image/gif', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/pdf', 'application/zip'],
             'directory' => 'file/{Y}/{m}/{d}',
-            'max_size' => '5m',
+            'max_size'  => '5m',
         ],
         'editor' => [
-            'name' => 'file',
-            'mimes' => ['image/jpeg', 'image/png', 'image/bmp', 'image/gif','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','application/pdf','application/zip'],
+            'name'      => 'file',
+            'mimes'     => ['image/jpeg', 'image/png', 'image/bmp', 'image/gif', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/pdf', 'application/zip'],
             'directory' => 'editor/{Y}/{m}/{d}',
-            'max_size' => '5m',
+            'max_size'  => '5m',
         ],
         'thumbnail' => [
-            'name' => 'file',
-            'mimes' => ['image/jpeg', 'image/png', 'image/bmp', 'image/gif'],
+            'name'      => 'file',
+            'mimes'     => ['image/jpeg', 'image/png', 'image/bmp', 'image/gif'],
             'directory' => 'thumbnail/{Y}/{m}/{d}',
-            'max_size' => '2m',
+            'max_size'  => '2m',
         ],
 
         //...

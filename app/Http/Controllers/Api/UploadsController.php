@@ -13,10 +13,10 @@ class UploadsController extends Controller
         $response = StrategyResolver::resolveFromRequest($request, $request->get('strategy', 'default'))->upload();
 
         return [
-            'status' => 'done',
-            'url' => $response->url,
-            'path' => $response->path,
-            'filename' => $response->filename,
+            'status'      => 'done',
+            'url'         => $response->url,
+            'path'        => $response->path,
+            'filename'    => $response->filename,
             'origin_name' => $response->originalName,
             //...
         ];
@@ -27,10 +27,10 @@ class UploadsController extends Controller
         $response = StrategyResolver::resolveFromRequest($request, $request->get('strategy', 'file'))->upload();
 
         return [
-            'status' => 'success',
-            'url' => $response->url,
-            'path' => $response->path,
-            'filename' => $response->filename,
+            'status'      => 'success',
+            'url'         => $response->url,
+            'path'        => $response->path,
+            'filename'    => $response->filename,
             'origin_name' => $response->originalName,
             //...
         ];
@@ -41,10 +41,10 @@ class UploadsController extends Controller
         $response = StrategyResolver::resolveFromRequest($request, $request->get('strategy', 'editor'))->upload();
 
         return [
-            'status' => 'success',
-            'url' => $response->url,
-            'path' => $response->path,
-            'filename' => $response->filename,
+            'status'      => 'success',
+            'url'         => $response->url,
+            'path'        => $response->path,
+            'filename'    => $response->filename,
             'origin_name' => $response->originalName,
             //...
         ];
@@ -55,8 +55,8 @@ class UploadsController extends Controller
         $response = StrategyResolver::resolveFromRequest($request, $request->get('strategy', 'thumbnail'))->upload();
 
         return [
-            'status' => 'success',
-            'url' => $response->url,
+            'status'      => 'success',
+            'url'         => $response->url,
             'origin_name' => $response->originalName,
             //...
         ];

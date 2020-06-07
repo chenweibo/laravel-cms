@@ -10,7 +10,7 @@ class ToolsController extends Controller
     public function clearCache()
     {
         modifyEnv([
-            'APP_ENV' => 'local',
+            'APP_ENV'   => 'local',
             'APP_DEBUG' => 'true',
         ]);
 
@@ -25,7 +25,7 @@ class ToolsController extends Controller
     public function Cache()
     {
         modifyEnv([
-            'APP_ENV' => 'production',
+            'APP_ENV'   => 'production',
             'APP_DEBUG' => 'false',
         ]);
         Artisan::call('config:cache');

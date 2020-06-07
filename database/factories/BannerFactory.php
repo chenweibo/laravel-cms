@@ -7,9 +7,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Banner::class, function (Faker $faker) {
     return [
-        'title' => $faker->name,
+        'title'       => $faker->name,
         'description' => '描述',
-        'banners' => [],
+        'banners'     => [],
 
     ];
 });
