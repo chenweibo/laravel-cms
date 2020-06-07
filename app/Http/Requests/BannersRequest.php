@@ -28,7 +28,7 @@ class BannersRequest extends FormRequest
             case 'POST':
 
                 return [
-                    'title' => 'required',
+                    'title'       => 'required',
                     'description' => 'required',
                 ];
             // UPDATE

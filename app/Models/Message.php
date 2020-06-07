@@ -38,7 +38,7 @@ class Message extends Model
     protected $fillable = ['title', 'telephone', 'address', 'email', 'detail', 'isRead', 'extra'];
 
     protected $casts = [
-        'extra' => 'json', // 声明json类型
+        'extra'  => 'json', // 声明json类型
         'isRead' => 'boolean',
     ];
 }

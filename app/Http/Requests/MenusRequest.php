@@ -28,12 +28,12 @@ class MenusRequest extends FormRequest
             case 'POST':
 
                 return [
-                    'title' => 'required',
+                    'title'    => 'required',
                     'parentId' => 'required',
-                    'path' => 'required',
-                    'url' => 'required|unique:menus,url',
-                    'view' => 'required',
-                    'type' => 'required',
+                    'path'     => 'required',
+                    'url'      => 'required|unique:menus,url',
+                    'view'     => 'required',
+                    'type'     => 'required',
                 ];
 
             // UPDATE

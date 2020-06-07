@@ -12,10 +12,10 @@ class Menu extends Model
     protected $fillable = ['title', 'redirect', 'recommend', 'perPage', 'url', 'parentId', 'pageInfo', 'path', 'view', 'type', 'sort', 'extra', 'hide'];
 
     protected $casts = [
-        'extra' => 'json', // 声明json类型
-        'hide' => 'boolean',
+        'extra'     => 'json', // 声明json类型
+        'hide'      => 'boolean',
         'recommend' => 'boolean',
-        'view' => 'json', // 声明json类型
+        'view'      => 'json', // 声明json类型
     ];
 
     public function findChildren()

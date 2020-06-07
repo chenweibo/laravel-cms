@@ -4,8 +4,7 @@
 
 use App\Models\User;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Hash;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -17,16 +16,16 @@ use Illuminate\Support\Str;
 |
 */
 
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         // 'email' => $faker->unique()->safeEmail,
-        'email' => 'dycm@dycm.com',
+        'email'             => 'dycm@dycm.com',
         'email_verified_at' => now(),
-        'password' => Hash::make('dycm123456'), // dycm123456
-        'remember_token' => Str::random(10),
-        'is_admin' => 1,
+        'password'          => Hash::make('dycm123456'), // dycm123456
+        'remember_token'    => Str::random(10),
+        'is_admin'          => 1,
     ];
 });

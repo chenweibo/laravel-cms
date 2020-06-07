@@ -29,7 +29,7 @@ class ContentsRequest extends FormRequest
 
                 return [
                     'title' => 'required',
-                    'sort' => 'required',
+                    'sort'  => 'required',
                 ];
             // UPDATE
             case 'PUT':

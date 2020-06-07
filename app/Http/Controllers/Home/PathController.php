@@ -70,7 +70,7 @@ class PathController extends Controller
     {
         if ($request->ajax()) {
             $request->validate([
-                'title' => 'required',
+                'title'     => 'required',
                 'telephone' => 'required',
             ]);
             Message::create($request->all());
@@ -78,7 +78,7 @@ class PathController extends Controller
             return ['message' => ok];
         }
         $request->validate([
-            'title' => 'required',
+            'title'     => 'required',
             'telephone' => 'required',
         ]);
         Message::create($request->all());

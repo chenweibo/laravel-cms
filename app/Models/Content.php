@@ -63,9 +63,9 @@ class Content extends Model
     }
 
     protected $casts = [
-        'extra' => 'json', // 声明json类型
-        'status' => 'boolean',
-        'time' => 'datetime:Y-m-d',
+        'extra'     => 'json', // 声明json类型
+        'status'    => 'boolean',
+        'time'      => 'datetime:Y-m-d',
         'recommend' => 'boolean',
     ];
 

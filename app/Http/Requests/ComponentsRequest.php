@@ -28,8 +28,8 @@ class ComponentsRequest extends FormRequest
             case 'POST':
 
                 return [
-                    'title' => 'required',
-                    'notes' => 'required',
+                    'title'  => 'required',
+                    'notes'  => 'required',
                     'belong' => 'required',
                     'detail' => 'required',
                 ];
