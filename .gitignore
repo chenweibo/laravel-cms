@@ -16,4 +16,3 @@ _ide_helper.php
 composer.lock
 .php_cs.cache
 .DS_Store
-composer.lock
