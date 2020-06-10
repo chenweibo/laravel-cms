@@ -41,7 +41,10 @@ class AppServiceProvider extends ServiceProvider
             View::share('globalMenu', Cache::get('menu'));
         }
         if (Schema::hasTable('sets')) {
-            View::share('site', handleSiteStructure(Set::where('type', 'site')->get()->first()['sets']));
+            if (!Cache::get('site')) {
+                Cache::put('site', handleSiteStructure(Set::where('type', 'site')->get()->first()['sets']));
+            }
+            View::share('site', Cache::get('site'));
         }
 
         if (Schema::hasTable('banners')) {
