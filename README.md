@@ -34,10 +34,6 @@
 
 
 
-#### 安装扩展包依赖
-
-	composer install
-
 #### 生成配置文件
 
 ```
@@ -57,12 +53,17 @@ DB_PASSWORD=
 ```
 
 
+#### 安装扩展包依赖
 
+	composer install
+	
+	
 #### 生成秘钥
 
 ```shell
 $ php artisan key:generate
 ```
+
 
 #### 生成数据表及生成测试数据
 
