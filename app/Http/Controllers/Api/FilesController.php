@@ -44,14 +44,18 @@ class FilesController extends Controller
 
     public function mkDir(Request $request)
     {
-        File::makeDirectory($request->path, $mode = 0755, $recursive = false, $force = false);
+
+        $this->fileSystem()->createDir($request->path);
+        //File::makeDirectory($request->path, $mode = 0755, $recursive = false, $force = false);
 
         return ['message' => 'ok'];
     }
 
     public function deleteDir(Request $request)
     {
-        File::deleteDirectory($request->path, $preserve = false);
+        $this->fileSystem()->deleteDir($request->path);
+
+        // File::deleteDirectory($request->path, $preserve = false);
 
         return ['message' => 'ok'];
     }
@@ -67,7 +71,7 @@ class FilesController extends Controller
 
     public function deleteFile(Request $request)
     {
-        if (unlink($request->path)) {
+        if ($this->fileSystem()->delete($request->path())) {
             return ['message' => 'ok'];
         }
 
@@ -76,19 +80,20 @@ class FilesController extends Controller
 
     public function getFileContent(Request $request)
     {
-        return ['data' => File::getRequire($request->path)];
+        return ['data' => $this->fileSystem()->readFiles($request->path)];
     }
 
     public function saveFile(Request $request)
     {
-        File::replace($request->path, $request->fileContent);
+
+        $this->fileSystem()->putFiles($request->path, $request->fileContent);
 
         return ['message' => 'ok'];
     }
 
     public function someRename(Request $request)
     {
-        if (rename($request->oldname, $request->newname)) {
+        if ($this->fileSystem()->rename($request->oldname, $request->newname)) {
             return ['message' => 'ok'];
         }
 
