@@ -44,7 +44,6 @@ class FilesController extends Controller
 
     public function mkDir(Request $request)
     {
-
         $this->fileSystem()->createDir($request->path);
         //File::makeDirectory($request->path, $mode = 0755, $recursive = false, $force = false);
 
@@ -85,7 +84,6 @@ class FilesController extends Controller
 
     public function saveFile(Request $request)
     {
-
         $this->fileSystem()->putFiles($request->path, $request->fileContent);
 
         return ['message' => 'ok'];
