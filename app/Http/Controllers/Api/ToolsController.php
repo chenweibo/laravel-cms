@@ -29,7 +29,7 @@ class ToolsController extends Controller
             'APP_DEBUG' => 'false',
         ]);
         Artisan::call('config:cache');
-        Artisan::call('route:cache');
+        //Artisan::call('route:cache');
 
         return ['messages' => 'ok'];
     }
