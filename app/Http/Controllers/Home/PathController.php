@@ -87,7 +87,6 @@ class PathController extends Controller
         Message::create($request->all());
 
         return back()->with('success', '添加成功!');
-
     }
 
     public function search(Request $request)
