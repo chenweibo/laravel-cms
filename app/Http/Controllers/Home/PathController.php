@@ -68,6 +68,9 @@ class PathController extends Controller
 
     public function gbook(Request $request)
     {
+
+        //自定义标签如 extra [{"label":"座机","value":"343224"},{"label":"传真","value":"34322qq4"}]
+
         if ($request->ajax()) {
             $request->validate([
                 'title'     => 'required',
@@ -83,9 +86,8 @@ class PathController extends Controller
         ]);
         Message::create($request->all());
 
-        return back();
+        return back()->with('success', '添加成功!');
 
-        abort(404);
     }
 
     public function search(Request $request)
