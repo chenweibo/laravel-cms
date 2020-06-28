@@ -37,7 +37,7 @@ class Menu extends Model
     public function scopeAllTree($query)
     {
         return $query->with(['children' => function ($query) {
-            $query->orderBy('sort', 'asc');
+            $query->orderBy('sort', 'asc')->where('hide', false);
         }])->orderBy('sort', 'asc')->where('parentId', 0);
     }
 
