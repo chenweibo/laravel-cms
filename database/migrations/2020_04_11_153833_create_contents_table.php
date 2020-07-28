@@ -19,6 +19,7 @@ class CreateContentsTable extends Migration
             $table->integer('sort');
             $table->string('time')->nullable($value = true);
             $table->string('redirect')->nullable($value = true);
+            $table->string('path')->nullable($value = true);
             $table->integer('menus_id');
             $table->tinyInteger('recommend')->default(false);
             $table->integer('page_views');

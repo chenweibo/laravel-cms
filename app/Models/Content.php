@@ -9,19 +9,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * App\Models\Content.
  *
- * @property int                             $id
- * @property string                          $title
- * @property int                             $sort
- * @property string                          $time
- * @property int                             $menus_id
- * @property int                             $page_views
- * @property string                          $detail
- * @property array                           $extra
- * @property bool                            $status
+ * @property int $id
+ * @property string $title
+ * @property int $sort
+ * @property string $time
+ * @property int $menus_id
+ * @property int $page_views
+ * @property string $detail
+ * @property array $extra
+ * @property bool $status
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property \App\Models\Menu                $menu
+ * @property \App\Models\Menu $menu
  *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Content filter($input = [], $filter = null)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Content list()
@@ -55,7 +55,7 @@ class Content extends Model
     use SoftDeletes;
     use Filterable;
 
-    protected $fillable = ['title', 'sort', 'redirect', 'recommend', 'time', 'menus_id', 'page_views', 'detail', 'extra', 'status', 'type'];
+    protected $fillable = ['title', 'path', 'sort', 'redirect', 'recommend', 'time', 'menus_id', 'page_views', 'detail', 'extra', 'status', 'type'];
 
     public function menu()
     {
@@ -63,9 +63,9 @@ class Content extends Model
     }
 
     protected $casts = [
-        'extra'     => 'json', // 声明json类型
-        'status'    => 'boolean',
-        'time'      => 'datetime:Y-m-d',
+        'extra' => 'json', // 声明json类型
+        'status' => 'boolean',
+        'time' => 'datetime:Y-m-d',
         'recommend' => 'boolean',
     ];
 
