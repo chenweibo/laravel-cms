@@ -73,6 +73,7 @@ $factory->define(Content::class, function (Faker $faker) {
         'extra'     => $extra,
         'page_views'=> 0,
         'detail'    => '',
+        'path' =>'0-3-4',
         'status'    => true,
     ];
 });
