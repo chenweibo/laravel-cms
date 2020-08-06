@@ -8,7 +8,5 @@
     <title>index</title>
 </head>
 <body>
-
-{{dd(getAllContentByMenuId(3))}}
 </body>
 </html>
