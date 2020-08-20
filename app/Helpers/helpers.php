@@ -240,21 +240,21 @@ function arr2tree($list, $id = 'id', $pid = 'pid', $son = 'sub')
    *
    * @return array
    */
-  function arr2table(array $list, $id = 'id', $pid = 'pid', $path = 'path', $ppath = '')
-  {
-      $tree = [];
-      foreach (self::arr2tree($list, $id, $pid) as $attr) {
-          $attr[$path] = "{$ppath}-{$attr[$id]}";
-          $attr['sub'] = isset($attr['sub']) ? $attr['sub'] : [];
-          $attr['spt'] = substr_count($ppath, '-');
-          $attr['spl'] = str_repeat('　├　', $attr['spt']);
-          $sub = $attr['sub'];
-          unset($attr['sub']);
-          $tree[] = $attr;
-          if (!empty($sub)) {
-              $tree = array_merge($tree, self::arr2table($sub, $id, $pid, $path, $attr[$path]));
-          }
-      }
-
-      return $tree;
-  }
+//  function arr2table(array $list, $id = 'id', $pid = 'pid', $path = 'path', $ppath = '')
+//  {
+//      $tree = [];
+//      foreach (self::arr2tree($list, $id, $pid) as $attr) {
+//          $attr[$path] = "{$ppath}-{$attr[$id]}";
+//          $attr['sub'] = isset($attr['sub']) ? $attr['sub'] : [];
+//          $attr['spt'] = substr_count($ppath, '-');
+//          $attr['spl'] = str_repeat('　├　', $attr['spt']);
+//          $sub = $attr['sub'];
+//          unset($attr['sub']);
+//          $tree[] = $attr;
+//          if (!empty($sub)) {
+//              $tree = array_merge($tree, self::arr2table($sub, $id, $pid, $path, $attr[$path]));
+//          }
+//      }
+//
+//      return $tree;
+//  }
